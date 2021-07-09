@@ -2,6 +2,14 @@
 node_modules
 /dist
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
 
 # local env files
 .env.local
