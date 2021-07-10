@@ -21,7 +21,8 @@
         <div>
             <span 
                 class="v-countries__page"
-                v-for="n in 10"
+                :class="{'v-countries__page--current': n == page}"
+                v-for="n in pages"
                 :key="n"
                 @click="openPage(n)">
 
@@ -114,6 +115,8 @@ export default {
 
         openPage(n) {
             this.countriesToShow = [];
+            this.page = n;
+
             let id = this.perPage * (n - 1);
 
             for (let i = 0; i < this.perPage; i++) {
@@ -159,6 +162,10 @@ export default {
 
     &__page {
         margin: 0 5px;
+
+        &--current {
+            color: $main-color;
+        }
     }
 }
 </style>
